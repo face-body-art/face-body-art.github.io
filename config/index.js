@@ -11,8 +11,8 @@ module.exports = {
   siteDescription: 'Face & Body Art',
   author: 'Face & Body Art', // Author for schema.org JSONLD
 
-  // siteFBAppID: '123456789', // Facebook App ID - Optional
-  userTwitter: '@jodie', // Twitter Username
+  siteFBAppID: '123456789', // Facebook App ID - Optional
+  userTwitter: '@FaceBodyArtCZ', // Twitter Username
   ogSiteName: 'FaceBodyArtCZ', // Facebook Site Name
   ogLanguage: 'cs_CZ', // og:language
   googleAnalyticsID: 'UA-XXXXXX-X',

@@ -107,23 +107,23 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, three
     <Layout>
       <SEO />
       <Area style={pageAnimation}>
-        <FirstProject to={firstProject.slug} aria-label={`View project "${firstProject.title}"`}>
+        <FirstProject to={firstProject.slug} aria-label={`Zjistěte více o "${firstProject.title}"`}>
           <Img fluid={firstProject.cover.childImageSharp.fluid} />
           <span>{firstProject.title}</span>
         </FirstProject>
         <AboutUs to="/o-mne" aria-label="Visit my about page">
           <Img fluid={aboutUs.childImageSharp.fluid} />
-          <span>About</span>
+          <span>O&nbsp;mně</span>
         </AboutUs>
         <ThreeProjects>
           {threeProjects.nodes.map(project => (
-            <GridItem to={project.slug} key={project.slug} aria-label={`View project "${project.title}"`}>
+            <GridItem to={project.slug} key={project.slug} aria-label={`Zjistěte více o projektu "${project.title}"`}>
               <Img fluid={project.cover.childImageSharp.fluid} />
               <span>{project.title}</span>
             </GridItem>
           ))}
         </ThreeProjects>
-        <Instagram to="/instagram" aria-label="See my Instagram pictures">
+        <Instagram to="/instagram" aria-label="Podívejte se na moji práci na Instagramu">
           <Img fluid={instagram.childImageSharp.fluid} />
           <span>Instagram</span>
         </Instagram>

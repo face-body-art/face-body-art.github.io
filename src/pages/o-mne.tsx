@@ -1,10 +1,22 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import { config, useSpring } from 'react-spring'
 import Layout from '../components/layout'
 import { AnimatedBox } from '../elements'
 import SEO from '../components/SEO'
 
-const About = () => {
+type PageProps = {
+  data: {
+    site: {
+      siteMetadata: {
+        siteUrl: string
+      }
+    }
+  }
+}
+
+const About: React.FunctionComponent<PageProps> = ({ data: { site } }) => {
+//const About = () => {
   const pageAnimation = useSpring({
     config: config.slow,
     from: { opacity: 0 },
@@ -13,12 +25,11 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO title="O mně | Face &amp; Body Art" desc="Hi. I'm LekoArts! You can visit my website or my other Gatsby projects." />
+      <SEO title="O mně | Face &amp; Body Art" desc="Hi. I'm Lea! You can visit my website or my other Gatsby projects." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]}>
         <h1>Hi. I'm Lea!</h1>
         <p>
-          You can visit my <a href="https://www.lekoarts.de/en">website</a> or my other{' '}
-          <a href="https://gatsby-starter-portfolio.netlify.com">Gatsby projects</a>.
+          You can visit my <a href={ site.siteMetadata.siteUrl }>website</a>.
         </p>
       </AnimatedBox>
     </Layout>
@@ -26,3 +37,13 @@ const About = () => {
 }
 
 export default About
+
+export const query = graphql`
+  query About {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`
